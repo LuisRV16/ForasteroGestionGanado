@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap-5.3.3-dist/css/bootstrap.min.css">
+    <title>Detalles del Animal</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <h3 class="text-center">Detalles del Animal</h3>
+        <div class="row">
+            <div class="col-md-4">
+                <!-- Imagen del animal -->
+                <img id="animalImage" src="" alt="Imagen del animal" class="img-fluid mb-3">
+            </div>
+            <div class="col-md-8">
+                <h4>Información General</h4>
+                <p><strong>SINIIGA:</strong> <span id="animalSiniiga"></span></p>
+                <p><strong>Raza:</strong> <span id="animalRace"></span></p>
+                <p><strong>Fecha de Nacimiento:</strong> <span id="animalBirthDate"></span></p>
+                <p><strong>Peso al Nacer:</strong> <span id="animalWeight"></span> Kg</p>
+                <p><strong>Padre (opcional):</strong> <span id="animalFather"></span></p>
+                <p><strong>Madre (opcional):</strong> <span id="animalMother"></span></p>
+                
+                <!-- Botón para eliminar animal -->
+                <button id="deleteAnimalBtn" class="btn btn-danger mt-4">Eliminar Animal</button>
+            </div>
+        </div>
+
+        <h4 class="mt-4">Vacunas Aplicadas</h4>
+        <div id="vacunas-section">
+            <!-- Tabla de vacunas aplicadas -->
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nombre de la Vacuna</th>
+                        <th>Número de ML</th>
+                        <th>Fecha de Aplicación</th>
+                    </tr>
+                </thead>
+                <tbody id="vaccinesTable">
+                    <tr><td colspan="3">No hay vacunas aplicadas</td></tr>
+                </tbody>
+            </table>
+            <!-- Botón para añadir nueva vacuna aplicada -->
+            <button id="addNewVaccineBtn" class="btn btn-primary mb-4">Nueva vacuna aplicada</button>
+        </div>
+
+        <!-- Formulario para agregar nueva vacuna aplicada -->
+        <div id="addVaccineFormContainer" class="d-none">
+            <h5>Añadir Vacuna Aplicada</h5>
+            <form id="addVaccineForm">
+                <div class="mb-3">
+                    <label for="vaccineSelect" class="form-label">Vacuna:</label>
+                    <select id="vaccineSelect" class="form-control" required></select>
+                </div>
+                <div class="mb-3">
+                    <label for="dose" class="form-label">Dosis (ml):</label>
+                    <input type="number" id="dose" class="form-control" min="1" required>
+                </div>
+                <div class="mb-3">
+                    <label for="dateApplied" class="form-label">Fecha de Aplicación:</label>
+                    <input type="date" id="dateApplied" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-success">Agregar</button>
+                <button type="button" id="cancelAddVaccine" class="btn btn-secondary">Cancelar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/animalDetails.js"></script>
+    <script src="/bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
